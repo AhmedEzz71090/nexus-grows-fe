@@ -1,0 +1,12 @@
+.navbar {
+  .container-fluid {
+    .navbar-brand {
+      height: 40px;
+      width: 40px;
+      padding: 0;
+      img {
+        height: inherit;
+      }
+    }
+  }
+}
