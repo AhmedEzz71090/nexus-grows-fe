@@ -1,9 +1,36 @@
 .navbar {
+  background-color: #3E603B !important;
+
+  ::ng-deep {
+    bs-dropdown-container {
+      top: 1rem !important;
+    }
+  }
+
   .container-fluid {
+    #navbarNav {
+      ul {
+        li {
+          align-self: center;
+
+          a {
+            color: antiquewhite !important;
+          }
+
+          .btn-group {
+            i {
+              color: antiquewhite;
+            }
+          }
+        }
+      }
+    }
+
     .navbar-brand {
       height: 40px;
       width: 40px;
       padding: 0;
+
       img {
         height: inherit;
       }
