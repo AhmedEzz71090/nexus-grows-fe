@@ -3,13 +3,26 @@
     <a class="navbar-brand" href="#">
       <img src="assets/logo.jpg" alt="LOGO">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav d-flex justify-content-between w-100">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Products</a>
+        </li>
+        <li class="nav-item d-flex">
+          <div class="btn-group" dropdown container="nav" placement="bottom right">
+            <i class="fa-solid fa-user-gear fa-xl" id="button-animated" dropdownToggle type="button"
+               aria-controls="dropdown-animated"></i>
+            <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+                role="menu" aria-labelledby="button-animated">
+              <li role="menuitem" (click)="changeLanguage()"><span class="dropdown-item">Language</span></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">Edit profile</a>
+              </li>
+            </ul>
+          </div>
         </li>
       </ul>
     </div>
