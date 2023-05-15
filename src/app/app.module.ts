@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {SharedModule} from "./shared/shared.module";
 import { ProductsComponent } from './products/components/products/products.component';
+import {CardModule} from "primeng/card";
+import {ButtonModule} from "primeng/button";
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { ProductsComponent } from './products/components/products/products.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    CardModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
