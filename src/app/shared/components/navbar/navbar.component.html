@@ -1,3 +1,4 @@
+<!--
 <nav class="navbar navbar-expand-lg bg-body-tertiary grid">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
@@ -28,3 +29,14 @@
     </div>
   </div>
 </nav>
+-->
+
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <img src="assets/logo/logo-transparent-svg.svg" height="40" class="mr-2" [routerLink]="'#'"/>
+  </ng-template>
+<!--  <ng-template>-->
+<!--    <p-button icon="pi pi-user" styleClass="p-button-rounded p-button-info p-button-text" (click)="userMenu.toggle($event)"></p-button>-->
+<!--    <p-menu #userMenu [model]="userMenuItems" [popup]="true"></p-menu>-->
+<!--  </ng-template>-->
+</p-menubar>
