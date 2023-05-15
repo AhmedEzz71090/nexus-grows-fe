@@ -1,14 +1,15 @@
-<div class="products-list d-flex overflow-hidden text-center">
-    <ng-container *ngFor="let product of products">
-      <div class="product d-flex">
-        <div class="card">
-          <img [src]="product.image" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text">{{product.description}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-    </ng-container>
+<div class="grid p-3">
+  <ng-container *ngFor="let product of products">
+    <p-card [header]="product.name" class="md:col-6 lg:col-3">
+      <ng-template pTemplate="header">
+        <img alt="Card" [src]="product.image" />
+      </ng-template>
+      <p>
+        {{product.description}}
+      </p>
+      <ng-template pTemplate="footer">
+        <p-button label="Save" icon="pi pi-check"></p-button>
+      </ng-template>
+    </p-card>
+  </ng-container>
 </div>
