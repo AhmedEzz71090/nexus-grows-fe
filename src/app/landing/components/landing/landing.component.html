@@ -1,4 +1,14 @@
-<div class="landing"></div>
-<div class="d-flex sign-up-form">
-  <input type="text" pInputText formControlName="email"/>
+<div class="landing">
+  <div class="card flex flex-column gap-3 p-3">
+    <h1>
+      Signup!
+    </h1>
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-at"></i>
+        </span>
+      <input pInputText placeholder="Email" [(ngModel)]="email"/>
+    </div>
+    <p-button label="Signup"></p-button>
+  </div>
 </div>

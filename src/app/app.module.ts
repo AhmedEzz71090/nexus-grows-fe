@@ -7,6 +7,7 @@ import {SharedModule} from "./shared/shared.module";
 import { ProductsComponent } from './products/components/products/products.component';
 import {CardModule} from "primeng/card";
 import {ButtonModule} from "primeng/button";
+import {LandingModule} from "./landing/landing.module";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {ButtonModule} from "primeng/button";
     AppRoutingModule,
     SharedModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    LandingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

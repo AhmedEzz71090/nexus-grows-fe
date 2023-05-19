@@ -31,6 +31,13 @@ export class NavbarComponent implements OnInit {
         styleClass: 'navigation-text'
       },
       {
+        label: 'Login',
+        command: () => {
+          /***/
+        },
+        styleClass: 'navigation-text'
+      },
+      {
         icon: 'pi pi-fw pi-user',
         items: [
           {
