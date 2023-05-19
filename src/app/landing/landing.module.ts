@@ -1,7 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LandingComponent } from './components/landing/landing.component';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {LandingComponent} from './components/landing/landing.component';
+import {InputTextModule} from "primeng/inputtext";
+import {ChipsModule} from "primeng/chips";
+import {FormsModule} from "@angular/forms";
+import {ButtonModule} from "primeng/button";
 
 
 @NgModule({
@@ -9,7 +12,12 @@ import { LandingComponent } from './components/landing/landing.component';
     LandingComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    InputTextModule,
+    ChipsModule,
+    FormsModule,
+    ButtonModule
   ]
 })
-export class LandingModule { }
+export class LandingModule {
+}
