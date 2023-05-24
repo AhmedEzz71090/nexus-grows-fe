@@ -1,7 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {BsDropdownConfig} from "ngx-bootstrap/dropdown";
 import {MenuItem} from "primeng/api";
 import {Router} from "@angular/router";
+import {AuthService} from "../../../auth/services/auth.service";
+import {takeWhile} from "rxjs";
 
 @Component({
   selector: 'app-navbar',
@@ -9,20 +11,25 @@ import {Router} from "@angular/router";
   styleUrls: ['./navbar.component.scss'],
   providers: [{provide: BsDropdownConfig, useValue: {isAnimated: true, autoClose: true}}]
 })
-export class NavbarComponent implements OnInit {
-  items: MenuItem[] = [];
+export class NavbarComponent implements OnInit, OnDestroy {
+  alive: boolean = true;
+  navBarItems: MenuItem[] = [];
   userMenuItems: MenuItem[] = [];
+  isLogin: boolean | undefined;
+  signUp: boolean | undefined;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authService: AuthService) {
   }
 
   ngOnInit() {
+    this.getLoginVal();
+    this.getSignupVal();
     this.setMenuBarItems();
     this.setUserMenuItems();
   }
 
-  setMenuBarItems() {
-    this.items = this.items = [
+  private setMenuBarItems() {
+    this.navBarItems = [
       {
         label: 'products',
         command: () => {
@@ -33,9 +40,26 @@ export class NavbarComponent implements OnInit {
       {
         label: 'Login',
         command: () => {
-          /***/
+          this.authService.logIn.next(true);
+          this.authService.signup.next(false);
+          this.getLoginVal();
+          this.getSignupVal();
+          this.setMenuBarItems();
         },
-        styleClass: 'navigation-text'
+        styleClass: 'navigation-text',
+        visible: this.signUp
+      },
+      {
+        label: 'Signup',
+        command: () => {
+          this.authService.signup.next(true);
+          this.authService.logIn.next(false);
+          this.getLoginVal();
+          this.getSignupVal();
+          this.setMenuBarItems();
+        },
+        styleClass: 'navigation-text',
+        visible: this.isLogin
       },
       {
         icon: 'pi pi-fw pi-user',
@@ -57,7 +81,7 @@ export class NavbarComponent implements OnInit {
     ];
   }
 
-  setUserMenuItems() {
+  private setUserMenuItems() {
     this.userMenuItems = [{
       label: 'File',
       items: [
@@ -68,7 +92,27 @@ export class NavbarComponent implements OnInit {
     }];
   }
 
-  changeLanguage() {
-    console.log('Language changed!')
+  private changeLanguage() {
+    // console.log('Language changed!')
+  }
+
+  private getLoginVal() {
+    this.authService.logIn.pipe(takeWhile(() => this.alive)).subscribe({
+      next: res => {
+        this.isLogin = res;
+      }
+    })
+  }
+
+  private getSignupVal() {
+    this.authService.signup.pipe(takeWhile(() => this.alive)).subscribe({
+      next: res => {
+        this.signUp = res;
+      }
+    })
+  }
+
+  ngOnDestroy() {
+    this.alive = false;
   }
 }

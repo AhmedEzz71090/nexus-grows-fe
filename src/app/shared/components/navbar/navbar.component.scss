@@ -24,6 +24,13 @@
               box-shadow: none !important;
             }
           }
+          li.user-menu {
+            p-menubarsub {
+              .p-submenu-list {
+                width: 10rem;
+              }
+            }
+          }
         }
       }
     }

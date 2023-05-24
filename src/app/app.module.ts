@@ -8,6 +8,7 @@ import { ProductsComponent } from './products/components/products/products.compo
 import {CardModule} from "primeng/card";
 import {ButtonModule} from "primeng/button";
 import {LandingModule} from "./landing/landing.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {LandingModule} from "./landing/landing.module";
     SharedModule,
     CardModule,
     ButtonModule,
-    LandingModule
+    LandingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

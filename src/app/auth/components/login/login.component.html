@@ -1,0 +1,18 @@
+<p-card header="Login" class="col-sm-12">
+  <div class="form flex flex-column justify-content-between gap-2" [formGroup]="loginForm">
+    <div class="p-inputgroup flex">
+      <span class="p-inputgroup-addon">
+          <i class="pi pi-at"></i>
+      </span>
+      <input pInputText placeholder="Email" formControlName="email"/>
+    </div>
+
+    <div class="p-inputgroup flex">
+      <span class="p-inputgroup-addon">
+          <i class="pi pi-eye"></i>
+      </span>
+      <input pInputText placeholder="Password" type="password" formControlName="password"/>
+    </div>
+    <button class="flex" pButton (click)="login()">Login</button>
+  </div>
+</p-card>

@@ -5,19 +5,21 @@ import {InputTextModule} from "primeng/inputtext";
 import {ChipsModule} from "primeng/chips";
 import {FormsModule} from "@angular/forms";
 import {ButtonModule} from "primeng/button";
+import {AuthModule} from "../auth/auth.module";
 
 
 @NgModule({
   declarations: [
     LandingComponent
   ],
-  imports: [
-    CommonModule,
-    InputTextModule,
-    ChipsModule,
-    FormsModule,
-    ButtonModule
-  ]
+    imports: [
+        CommonModule,
+        InputTextModule,
+        ChipsModule,
+        FormsModule,
+        ButtonModule,
+        AuthModule
+    ]
 })
 export class LandingModule {
 }
