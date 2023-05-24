@@ -1,1 +1,32 @@
-<p>signup works!</p>
+<p-card header="Signup!" class="col-sm-12">
+  <div class="form flex flex-column justify-content-between gap-2" [formGroup]="signupForm">
+    <div class="p-inputgroup flex">
+      <span class="p-inputgroup-addon">
+          <i class="pi pi-id-card"></i>
+      </span>
+      <input pInputText placeholder="Name" formControlName="name"/>
+    </div>
+
+    <div class="p-inputgroup flex">
+      <span class="p-inputgroup-addon">
+          <i class="pi pi-at"></i>
+      </span>
+      <input pInputText placeholder="Email" formControlName="email"/>
+    </div>
+
+    <div class="p-inputgroup flex">
+      <span class="p-inputgroup-addon">
+          <i class="pi pi-eye"></i>
+      </span>
+      <input pInputText placeholder="Password" type="password" formControlName="password"/>
+    </div>
+
+    <div class="p-inputgroup flex">
+      <span class="p-inputgroup-addon">
+          <i class="pi pi-unlock"></i>
+      </span>
+      <input pInputText placeholder="Confirm Password" type="password" formControlName="confirmPassword"/>
+    </div>
+    <button class="flex" pButton (click)="signup()" [disabled]="!formValid">Signup</button>
+  </div>
+</p-card>

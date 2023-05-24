@@ -9,17 +9,17 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  constructor(private http: HttpClient, private authService: AuthService) {
-  }
 
   loginForm = new FormGroup({
     email: new FormControl(),
     password: new FormControl(),
   })
+  constructor(private http: HttpClient, private authService: AuthService) {
+  }
 
   login() {
     const body = JSON.stringify(this.loginForm.value);
-    this.http.post<any>('https://api.escuelajs.co/api/v1/auth/login', body).subscribe({
+    this.http.post<any>('API_URL', body).subscribe({
       next: (res: any) => {
         console.log(res)
       },
