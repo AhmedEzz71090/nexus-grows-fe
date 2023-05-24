@@ -1,14 +1,12 @@
 <div class="landing">
-  <div class="card flex flex-column gap-3 p-3">
-    <h1>
-      Signup!
-    </h1>
-    <div class="p-inputgroup">
-        <span class="p-inputgroup-addon">
-            <i class="pi pi-at"></i>
-        </span>
-      <input pInputText placeholder="Email" [(ngModel)]="email"/>
+  <ng-container *ngIf="authService.logIn | async">
+    <div class="login">
+      <app-login></app-login>
     </div>
-    <p-button label="Signup"></p-button>
+  </ng-container>
+  <ng-container *ngIf="(authService.signup | async)">
+  <div class="signup">
+    <app-signup></app-signup>
   </div>
+  </ng-container>
 </div>
