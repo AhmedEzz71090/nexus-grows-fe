@@ -1,15 +1,1 @@
-<div class="grid p-3">
-  <ng-container *ngFor="let product of products">
-    <p-card [header]="product.name" class="md:col-6 lg:col-3">
-      <ng-template pTemplate="header">
-        <img alt="Card" [src]="product.image" />
-      </ng-template>
-      <p>
-        {{product.description}}
-      </p>
-      <ng-template pTemplate="footer">
-        <p-button label="Save" icon="pi pi-check"></p-button>
-      </ng-template>
-    </p-card>
-  </ng-container>
-</div>
+<app-table [data]="data" [cols]="cols" [filterCols]="filterCols"></app-table>

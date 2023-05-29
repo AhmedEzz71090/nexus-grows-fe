@@ -8,15 +8,20 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {MenubarModule} from "primeng/menubar";
 import {MenuModule} from "primeng/menu";
 import {ButtonModule} from "primeng/button";
+import { TableComponent } from './components/table/table.component';
+import {TableModule} from "primeng/table";
+import {InputTextModule} from "primeng/inputtext";
 
 
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    TableComponent
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +31,9 @@ import {ButtonModule} from "primeng/button";
     FontAwesomeModule,
     MenubarModule,
     MenuModule,
-    ButtonModule
+    ButtonModule,
+    TableModule,
+    InputTextModule
   ]
 })
 export class SharedModule { }

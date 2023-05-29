@@ -9,21 +9,23 @@ import {CardModule} from "primeng/card";
 import {ButtonModule} from "primeng/button";
 import {LandingModule} from "./landing/landing.module";
 import {HttpClientModule} from "@angular/common/http";
+import {TableModule} from "primeng/table";
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule,
-    CardModule,
-    ButtonModule,
-    LandingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        SharedModule,
+        CardModule,
+        ButtonModule,
+        LandingModule,
+        HttpClientModule,
+        TableModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
