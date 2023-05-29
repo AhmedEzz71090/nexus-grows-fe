@@ -31,9 +31,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private setMenuBarItems() {
     this.navBarItems = [
       {
-        label: 'products',
+        label: 'Products',
         command: () => {
           this.router.navigate(['products']);
+        },
+        styleClass: 'navigation-text'
+      },
+      {
+        label: 'Users',
+        command: () => {
+          this.router.navigate(['users']);
         },
         styleClass: 'navigation-text'
       },

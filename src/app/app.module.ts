@@ -10,11 +10,13 @@ import {ButtonModule} from "primeng/button";
 import {LandingModule} from "./landing/landing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {TableModule} from "primeng/table";
+import {UsersComponent} from "./users/users/users.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent
+    ProductsComponent,
+    UsersComponent
   ],
     imports: [
         BrowserModule,
