@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import products from '../products/products.json'
-// import {Table} from "primeng/table";
 
 @Component({
   selector: 'app-products',
