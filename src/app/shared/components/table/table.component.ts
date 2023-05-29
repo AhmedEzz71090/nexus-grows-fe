@@ -10,8 +10,10 @@ export class TableComponent implements OnInit {
   @Input() data: any[] = [];
   @Input() cols: any[] = [];
   @Input() filterCols: any[] = [];
-
+  @Input() cid: string = '';
+  fileName = '';
   ngOnInit(): void {
+    this.fileName = this.cid.substring(1);
   }
 
   clear(table: Table) {
