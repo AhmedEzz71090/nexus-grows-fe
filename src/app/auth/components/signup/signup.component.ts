@@ -10,14 +10,7 @@ import {takeWhile} from "rxjs";
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit, OnDestroy {
-  formValid = false
 
-  signupForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-    confirmPassword: new FormControl(),
-  })
   private alive = true;
 
   constructor(private http: HttpClient, private authService: AuthService) {
@@ -26,8 +19,9 @@ export class SignupComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
 
-  signup() {
-    const body = JSON.stringify(this.signupForm.value);
+  signup(form: any) {
+    const body = form.form.value;
+    delete body.confirmPassword;
     this.http.post<any>('API_URL', body).pipe(takeWhile(()=> this.alive)).subscribe({
       next: (res: any) => {
         console.log(res)

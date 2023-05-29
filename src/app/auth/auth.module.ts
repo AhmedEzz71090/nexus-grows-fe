@@ -6,6 +6,7 @@ import {InputTextModule} from "primeng/inputtext";
 import {ReactiveFormsModule} from "@angular/forms";
 import {ButtonModule} from "primeng/button";
 import {CardModule} from "primeng/card";
+import {FormsModule} from "@angular/forms"
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {CardModule} from "primeng/card";
     InputTextModule,
     ReactiveFormsModule,
     ButtonModule,
-    CardModule
+    CardModule,
+    FormsModule
   ]
 })
 export class AuthModule {
