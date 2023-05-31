@@ -38,6 +38,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
         styleClass: 'navigation-text'
       },
       {
+        label: 'Companies',
+        command: () => {
+          this.router.navigate(['companies']);
+        },
+        styleClass: 'navigation-text'
+      },
+      {
         label: 'Users',
         command: () => {
           this.router.navigate(['users']);

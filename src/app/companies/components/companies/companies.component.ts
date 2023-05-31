@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import products from '../products/products.json'
 import {Router} from "@angular/router";
 import {SharedService} from "../../../shared/services/shared.service";
+import companies from "../companies/companies.json"
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  selector: 'app-companies',
+  templateUrl: './companies.component.html',
+  styleUrls: ['./companies.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class CompaniesComponent implements OnInit{
   data: any[] = [];
   cols: any[] = [];
   filterCols: any[] = [];
@@ -24,14 +24,13 @@ export class ProductsComponent implements OnInit {
   }
   ngOnInit() {
     this.cid = this.router.url;
-    this.data = products;
+    this.data = companies;
     this.refactorData(this.data);
     this.cols = [
-      {field: 'productName', header: 'Product Name'},
-      {field: 'productQuantity', header: 'Quantity'},
-      {field: 'productMetric', header: 'Unit'},
-      {field: 'productType', header: 'Category'},
-      {field: 'productCountryOfOrigin', header: 'Country'}
+      {field: 'companyName', header: 'Company Name'},
+      {field: 'companyEmail', header: 'Email'},
+      {field: 'companyWebsiteUrl', header: 'Website'},
+      {field: 'companyLocation', header: 'Location'}
     ];
     this.filterCols = ['productName', 'productType', 'productCountryOfOrigin']
   }

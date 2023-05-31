@@ -11,12 +11,14 @@ import {LandingModule} from "./landing/landing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {TableModule} from "primeng/table";
 import {UsersComponent} from "./users/users/users.component";
+import {CompaniesComponent} from "./companies/components/companies/companies.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    UsersComponent
+    UsersComponent,
+    CompaniesComponent
   ],
     imports: [
         BrowserModule,
