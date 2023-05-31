@@ -10,7 +10,7 @@ import { FormsModule } from "@angular/forms"
 
 
 import { Injectable, NgZone } from '@angular/core';
-import { User } from '../auth/user.model';
+import { FirebaseUser } from '../auth/user.model';
 import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
@@ -95,14 +95,14 @@ export class AuthModule {
       });
   }
 
-   // Returns true when user is looged in and email is verified
-   get isLoggedIn(): boolean {
+  // Returns true when user is looged in and email is verified
+  get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
     return user !== null && user.emailVerified !== false ? true : false;
   }
 
-   // Sign out
-   SignOut() {
+  // Sign out
+  SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['sign-in']); // REVIEW ROUTER
@@ -135,7 +135,7 @@ export class AuthModule {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
-    const userData: User = {
+    const userData: FirebaseUser = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
@@ -144,6 +144,7 @@ export class AuthModule {
       password: user.password,
       returnSecureToken: user.returnSecureToken
     };
+
     return userRef.set(userData, {
       merge: true,
     });
