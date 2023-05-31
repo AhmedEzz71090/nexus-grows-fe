@@ -5,6 +5,6 @@ export interface Company {
     companyDescription: string
     companyWebsiteUrl: string
     companyName: string
-    companyLocation: string
+    companyLocation: Country
     companyAddress: string
   }

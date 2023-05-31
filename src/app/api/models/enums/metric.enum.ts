@@ -1,0 +1,4 @@
+enum Metric {
+
+    KG = "Kilogram"
+}

@@ -3,9 +3,9 @@ export interface Product {
     productName: string
     productQuantity: number
     productImgURL: string
-    productType: string
-    productMetric: string
-    productCountryOfOrigin: string
+    productType: ProductType
+    productMetric: Metric
+    productCountryOfOrigin: Country
     productDescription: string
     userId: string
 }
