@@ -17,7 +17,7 @@ export class CompaniesComponent implements OnInit{
   constructor(private router: Router, private sharedService: SharedService) {
     sharedService?.breadcrumb?.next([
       {
-        label: 'Products',
+        label: 'Companies',
         styleClass: 'last-breadcrumb',
       }
     ])
@@ -32,7 +32,7 @@ export class CompaniesComponent implements OnInit{
       {field: 'companyWebsiteUrl', header: 'Website'},
       {field: 'companyLocation', header: 'Location'}
     ];
-    this.filterCols = ['productName', 'productType', 'productCountryOfOrigin']
+    this.filterCols = ['companyName', 'companyLocation']
   }
 
   refactorData(data: any[]): any[] {
