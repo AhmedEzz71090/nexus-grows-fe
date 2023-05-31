@@ -15,7 +15,7 @@ export class UsersComponent implements OnInit {
   cid = '';
 
   constructor(private router: Router, private sharedService: SharedService) {
-    sharedService.breadcrumb.next([
+    sharedService?.breadcrumb?.next([
       {
         label: 'Users',
         styleClass: 'last-breadcrumb',
