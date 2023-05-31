@@ -10,7 +10,7 @@
         width: 100%;
         .p-menubar-root-list {
           justify-content: flex-start;
-          font-size: 1.5rem;
+          font-size: 1rem;
           .navigation-text {
             a {
               span.p-menuitem-text {
@@ -31,7 +31,7 @@
           li.user-menu {
             .p-menuitem-link {
               .p-menuitem-icon::before {
-                font-size: 1.5rem;
+                font-size: 1rem;
               }
             }
             p-menubarsub {
