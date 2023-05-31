@@ -11,17 +11,21 @@ import {ButtonModule} from "primeng/button";
 import { TableComponent } from './components/table/table.component';
 import {TableModule} from "primeng/table";
 import {InputTextModule} from "primeng/inputtext";
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import {BreadcrumbModule} from "primeng/breadcrumb";
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    TableComponent
+    TableComponent,
+    BreadcrumbComponent
   ],
   exports: [
     NavbarComponent,
-    TableComponent
+    TableComponent,
+    BreadcrumbComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +37,8 @@ import {InputTextModule} from "primeng/inputtext";
     MenuModule,
     ButtonModule,
     TableModule,
-    InputTextModule
+    InputTextModule,
+    BreadcrumbModule
   ]
 })
 export class SharedModule { }

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import products from '../products/products.json'
 import {Router} from "@angular/router";
+import {SharedService} from "../../../shared/services/shared.service";
 
 @Component({
   selector: 'app-products',
@@ -13,7 +14,13 @@ export class ProductsComponent implements OnInit {
   filterCols: any[] = [];
   cid = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private sharedService: SharedService) {
+    sharedService.breadcrumb.next([
+      {
+        label: 'Products',
+        styleClass: 'last-breadcrumb',
+      }
+    ])
   }
   ngOnInit() {
     this.cid = this.router.url;

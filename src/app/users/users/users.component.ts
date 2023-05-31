@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import users from '../users/Users.json'
 import {Router} from "@angular/router";
+import {SharedService} from "../../shared/services/shared.service";
 
 @Component({
   selector: 'app-users',
@@ -13,7 +14,13 @@ export class UsersComponent implements OnInit {
   filterCols: any[] = [];
   cid = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private sharedService: SharedService) {
+    sharedService.breadcrumb.next([
+      {
+        label: 'Users',
+        styleClass: 'last-breadcrumb',
+      }
+    ])
   }
   ngOnInit() {
     this.cid = this.router.url;
