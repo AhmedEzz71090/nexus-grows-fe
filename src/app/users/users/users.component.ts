@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import users from '../users/Users.json'
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-users',
@@ -10,8 +11,12 @@ export class UsersComponent implements OnInit {
   data: any[] = [];
   cols: any[] = [];
   filterCols: any[] = [];
+  cid = '';
 
+  constructor(private router: Router) {
+  }
   ngOnInit() {
+    this.cid = this.router.url;
     this.data = users;
     this.refactorData(this.data);
     setTimeout(() => {

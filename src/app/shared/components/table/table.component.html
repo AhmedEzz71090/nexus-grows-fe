@@ -1,9 +1,12 @@
-<p-table #dt [columns]="cols" [globalFilterFields]="filterCols" [value]="data" dataKey="id">
+<p-table #dt [columns]="cols" [globalFilterFields]="filterCols" [value]="data" [exportHeader]="'customExportHeader'" [exportFilename]="cid" dataKey="id">
 
   <ng-template pTemplate="caption">
     <div class="flex justify-content-between">
       <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt)"></button>
-      <div class="d-flex flex-column">
+      <div class="d-flex">
+        <div class="flex">
+          <button type="button" pButton pRipple icon="pi pi-upload" (click)="dt.exportCSV()" class="mr-2" pTooltip="CSV" tooltipPosition="bottom"></button>
+        </div>
         <span class="p-input-icon-left ml-auto">
           <i class="pi pi-search"></i>
           <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')"
